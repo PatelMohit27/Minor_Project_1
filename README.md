@@ -1,67 +1,68 @@
 # Minor_Project_1
 
-GroupDNA — Your WhatsApp Group Chat, Decoded
-"Spotify Wrapped, but for your friend group."
+# GroupDNA: Your WhatsApp Group Chat, Decoded 🧬
 
-GroupDNA is a behavioral data analytics tool written completely from scratch. It parses a raw, plain-text WhatsApp chat export file, handles real-world formatting inconsistencies, and produces an executive visual dashboard tracking conversational velocity, hourly rhythms, slang dictionaries, response behaviors, and custom personality archetypes.
+> **"Spotify Wrapped, but for your friend group."**
 
-📸 Dashboard Output Preview
-The engine renders a high-fidelity terminal dashboard using printable block characters and strict column alignments: 
-Refer to the following execution states for full text-art visual context:
-Screenshot 2026-06-29 155741.png
-Screenshot 2026-06-29 155758.png
+GroupDNA is a Python-based behavioral analytics tool that transforms a raw, messy WhatsApp chat export (`.txt` file) into a beautifully formatted, visually striking personality and activity report. 
 
-🛠️ Project Design & Constraints
-This project is deliberately engineered around algorithmic restraint and constraint discipline. To showcase proficiency with mathematical logic and optimization primitives, the use of automated wrapper libraries was completely banned
+The defining highlight of this project is its strict **Constraint Discipline**—the entire pipeline is engineered **without Pandas, Matplotlib, Seaborn, or Regular Expressions (Regex)**, relying solely on Python fundamentals and a single NumPy matrix for the core logic.
 
-🚫 STRICTLY FORBIDDEN:
-No Pandas (No DataFrames, no read_csv)
-No Data-Viz Modules (No Matplotlib, Seaborn, Plotly)
-No Regular Expressions (No re imports)
-No Pre-built Collections (No Counter, defaultdict)
+---
 
-✅ ALLOWED & UTILIZED
-Pure Python data primitives (lists, dicts, tuples, sets)
-NumPy Primitives (np.zeros, array masking, indexing, row/col reduction)
-Pure String Manipulation (.split(), .strip(), .isupper(), .replace())  
-Native datetime parsing (datetime.strptime, timedelta)
+## 📸 Project Showcase & Reference Output
 
-🚀 Core Architectural Features
-1. Robust Chat Parsing Engine
-- Reads raw WhatsApp logs line-by-line using basic file I/O operations and tokenizes structural components safely while accommodating critical edge cases
-- System Alerts: Traps notifications (e.g., encryption warnings, group modifications) without breaking index counts.  
-- Media / Deleted Messages: Isolates flags like <Media omitted> and This message was deleted to compute sharing frequencies separate from raw token lists.  
-- Multi-line Continuation: Dynamically captures single text blasts separated by hard carriage breaks using structural date anchor checkpoints.  
+The screenshots below show the final terminal-style analytics report generated inside the Google Colab environment using the synthetic dataset `hostel_bois.txt`:
 
-2. Time-Series Activity Heatmapping
-Maps conversational volume distribution by binding spatial coordinate elements into a 6×24 NumPy Matrix. Row indices track individual users across columns indexing 24-hour time arrays. The data normalize user-relative volumes to yield dynamic density scales rendered directly to the terminal workspace (., ░, ▒, █).  
+### 1. Group Overview & Activity Heatmap
+![Group Overview & Activity Heatmap](Screenshot%202026-06-29%20155741.png)
 
-3. Native Text-Mining & Stopword Interception
-- Punctuation blocks are programmatically stripped via linear string modifications. Texts are tokenized and processed against an isolated vocabulary checklist of common English and Hindi filler words, isolating authentic inside jargon and calculating visual frequency distributions.
+### 2. Word Frequency, Response Patterns & Archetypes
+![Response Patterns & Archetypes](Screenshot%202026-06-29%20155758.png)
 
-4. Dynamic Personality Archetype Matrix
-- Assigns a distinct personality classification to each user using quantified behavioral conditions:
-      - 💬 THE SPAMMER: Highest continuous back-to-back messaging blocks without active structural conversation context switches.
-      - 🦉 THE NIGHT OWL: Concentrates >60% of total output volume explicitly within late-night/early-morning constraints ($23:00 - 04:59$)
-      - 📖 THE STORYTELLER: Tallies extreme text lengths, maintaining high descriptive average word boundaries per single transmission.
-      - 👑 THE DRAMA QUEEN: Tracks high uppercase distributions and heavy punctuation anomalies (e.g., consecutive ! characters).
-      - 👻 THE GHOST: Computes long historical dry spells, finding users with long consecutive silent streaks over active group timeline spans.
-      - 👔 THE PAKKA PUNCTUAL (Custom Invented Archetype): Automatically flags group members executing communication patterns restricted to sensible corporate                 hours ($09:00 - 18:00$), identifying organized off-screen balance.
-  
-📊 Dataset Profile & Verification Results
-Tested against the official synthetic hostel_bois.txt tracking 6 concurrent participants across a locked 60-day window:
-- Total Clean Messages Processed: 3,174
-- Busiest Window: 04 May 2024 (76 messages mapped)
-- Timeline Range: 01 April 2024 to 30 May 2024
+*Note: Ensure these image files are uploaded directly to the root of your GitHub repository so they render correctly in this README.*
 
-📦 How To Run
-- Export any chosen WhatsApp conversation chat history as a .txt file (choose Without Media inside the application export panel)
-- Name your file hostel_bois.txt or change the FILE_NAME declaration inside your environment file pointer.
-- Run the notebook sections sequentially from top to bottom
+---
 
-🎓 Acknowledgments
-- Deep gratitude to Girish Sir and the technical coordinators at The Unlox Academy for designing this project constraints matrix. Stripping standard libraries away built solid engineering discipline and structural algorithmic clarity.
+## 🎯 Key Features Implemented
 
-Developed by Mohit Patel | Built with Python + NumPy Primitives 🐍
+The project successfully implements all **8 Core Mandatory Features** outlined in the `GroupDNA_Minor_Project_Brief.pdf`:
 
- 
+1. **The Chat Parser:** Iterates through raw lines, handling system alerts, deleted logs, multi-line entries, and media omissions (`<Media omitted>`) to extract clean data streams.
+2. **Group Overview:** Displays critical headline statistics, including message distribution percentages and a sorted participant ranking[cite: 1].
+3. **Busiest Day & Hour:** Identifies the precise day and collective peak hour across the entire chat duration[cite: 1].
+4. **Activity Heatmap (NumPy Matrix):** Bins user message frequencies into a `6 x 24` NumPy matrix, mapped out visually using customized printable text shading blocks (`.`, `░`, `▒`, `▓`, `█`)[cite: 1].
+5. **Top Words Tracker:** Tokenizes chat history, filters custom stop-words, and outputs a horizontal block-character bar graph representing vocabulary trends[cite: 1].
+6. **Response Gaps & Silent Streaks:** Parses text timestamps into native Python datetime objects to determine precise average reply times and longest consecutive ghost periods per member[cite: 1].
+7. **Personality Archetype System:** Runs user metadata through exclusive quantitative scoring rules to tag everyone with a definitive social archetype[cite: 1].
+8. **The Final Report Layout:** Wraps all analytical engines into a singular, highly scannable output using careful f-string padding and box-drawing elements[cite: 1].
+
+---
+
+## 🚫 Constraints & Technical Ground Rules
+
+To demonstrate underlying data science skills, standard abstractions were intentionally avoided[cite: 1]. The architecture maps directly to these strict boundaries:
+
+| Allowed Features 🟢 | Forbidden Libraries 🔴 |
+| :--- | :--- |
+| **Python Core Elements** (Loops, Lists, Sets, Tuples, Dicts, Functions, Comprehensions)[cite: 1] | **Pandas** (No DataFrames, no `read_csv`)[cite: 1] |
+| **NumPy Matrix Engine** (Array slicing, integer indexing, multidimensional shapes)[cite: 1] | **Matplotlib / Seaborn / Plotly** (Visualizations must be purely terminal-based)[cite: 1] |
+| **Built-in String Methods** (`split`, `strip`, `lower`, `isupper`, etc.)[cite: 1] | **re (Regex)** (All parsing completed via standard string methods)[cite: 1] |
+| **Datetime Module** (`strptime` and `timedelta` exclusively for time-math logs)[cite: 1] | **Pre-built WhatsApp Analyzers** or Heavy NLP Toolkits (No NLTK, Scikit-learn)[cite: 1] |
+
+---
+
+## 🧠 Quantitative Archetype Mechanics
+
+Participants are grouped exclusively into unique archetypes by evaluating operational metrics[cite: 1]:
+
+* **THE SPAMMER:** Triggered by high message bursts back-to-back without group interruption[cite: 1]. *Dataset result: Rahul (Avg burst 4.5)*
+* **THE GROUP MOM:** Dictated by the highest frequency of empathetic and care-focused tracking keywords[cite: 1]. *Dataset result: Priya*
+* **THE NIGHT OWL:** Flags members distributing over 60% of total activity late into the night (23:00 to 04:59)[cite: 1]. *Dataset result: Aman (79.8% metrics)*
+* **THE STORYTELLER:** Attributed to text logs maintaining verbose message architectures (>30 average words per entry)[cite: 1]. *Dataset result: Karan (Avg 57.0 words)*
+* **THE DRAMA QUEEN:** Driven by accounts with >30% text lines entirely in ALL-CAPS or packed with multiple exclamation marks[cite: 1]. *Dataset result: Neha (63.3% ALL-CAPS)*
+* **THE GHOST:** Surfaces members spending more than 60% of the recorded timeline completely silent[cite: 1]. *Dataset result: Vikas (Silent on 44 out of 60 days)*
+
+---
+
+Represented by : Mohit Patel
