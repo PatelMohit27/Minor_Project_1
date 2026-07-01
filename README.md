@@ -15,10 +15,12 @@ The defining highlight of this project is its strict **Constraint Discipline**â€
 The screenshots below show the final terminal-style analytics report generated inside the Google Colab environment using the synthetic dataset `hostel_bois.txt`:
 
 ### 1. Group Overview & Activity Heatmap
-![Group Overview & Activity Heatmap](Screenshot%202026-06-29%20155741.png)
+![Group Overview & Activity Heatmap]<img width="982" height="977" alt="Screenshot 2026-06-29 155741" src="https://github.com/user-attachments/assets/34e3684a-1616-46e4-aad1-abb69cd09058" />
+
 
 ### 2. Word Frequency, Response Patterns & Archetypes
-![Response Patterns & Archetypes](Screenshot%202026-06-29%20155758.png)
+![Response Patterns & Archetypes]<img width="987" height="972" alt="Screenshot 2026-06-29 155758" src="https://github.com/user-attachments/assets/33871099-315c-46de-8536-cdceb11baea9" />
+
 
 *Note: Ensure these image files are uploaded directly to the root of your GitHub repository so they render correctly in this README.*
 
